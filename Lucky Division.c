@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main()
+{
+    int n,a[100],x,y,i=0,pos=2,count=2,j,flag=-2;
+    a[0]=4,a[1]=7;
+    scanf("%d",&n);
+    while(1)
+    {
+        x=a[i]*10+4;
+        y=a[i]*10+7;
+        a[pos++]=x;
+        a[pos++]=y;
+        count=count+2;
+        i++;
+        if(y>n)
+        {
+            break;
+        }
+    }
+    for(j=0;j<count;j++)
+    {
+        if(n%a[j]==0)
+        {
+           flag=-1;
+           break;
+        }
+        else{
+            continue;
+        }
+    }
+    if(flag==-1)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+
+}

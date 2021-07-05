@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main()
+{
+    int i,j,num[5][5],c_row,c_col,col,row;
+    for(i=0;i<5;i++)
+    {
+        for(j=0;j<5;j++)
+        {
+            scanf("%d",&num[i][j]);
+        }
+    }
+    for(i=0;i<5;i++)
+    {
+        for(j=0;j<5;j++)
+        {
+            if(num[i][j]==1)
+            {
+                row=i+1;
+                col=j+1;
+                break;
+            }
+        }
+    }
+    if(row>3)
+    {
+        c_row=row-3;
+    }
+    else
+    {
+        c_row=3-row;
+    }
+    if(col>3)
+    {
+        c_col=col-3;
+    }
+    else
+    {
+        c_col=3-col;
+    }
+    printf("%d\n",c_col+c_row);
+}
