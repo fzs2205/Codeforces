@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+    int i,n,a[101],greatest,smallest,x=0,y=0,p,q;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    greatest=a[0];
+    for(i=1;i<n;i++)
+    {
+        if(a[i]>greatest)
+        {
+            greatest=a[i];
+            y=i;
+        }
+    }
+    smallest=a[0];
+    for(i=1;i<n;i++)
+    {
+        if(a[i]<=smallest)
+        {
+            smallest=a[i];
+            x=i;
+        }
+    }
+    p=(y+(n-1)-x);
+    q=((y+(n-1)-x)-1);
+    if(y<x)
+    {
+        printf("%d\n",p);
+    }
+    else
+    {
+        printf("%d\n",q);
+    }
+}

@@ -1,0 +1,61 @@
+#include<stdio.h>
+int main()
+{
+    int a,b,h,i=1,num=0,rem=0,gcd=0,x=0,y=0,temp=0;
+    scanf("%d %d %d",&a,&b,&h);
+    while(h>num)
+    {
+        if(i%2!=0)
+        {
+            if(a<h)
+            {
+                y=a;
+                x=h;
+            }
+            else
+            {
+                y=h;
+                x=a;
+            }
+            i++;
+        }
+        else
+        {
+            if(b<h)
+            {
+                y=b;
+                x=h;
+            }
+            else
+            {
+                x=b;
+                y=h;
+            }
+            i++;
+        }
+        while(1)
+        {
+            rem=x%y;
+            if(rem==0)
+            {
+                break;
+            }
+            else
+            {
+                temp=y;
+                y=rem;
+                x=temp;
+            }
+        }
+        gcd=y;
+        h=h-gcd;
+    }
+    if(i%2!=0)
+    {
+        printf("1\n");
+    }
+    else
+    {
+        printf("0\n");
+    }
+}
